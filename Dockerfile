@@ -1,0 +1,7 @@
+FROM postgres:14.1-alpine
+
+ARG BUILD_FORCE
+RUN echo "${BUILD_FORCE}"
+
+ENV PGDATA=/data
+EXPOSE 5432

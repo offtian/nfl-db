@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  postgres:
+    volumes:
+          - ./postgresql.conf:/etc/postgresql/postgresql.conf
+          - nflpgdata:/data
+          - ./scripts/:/data/scripts/
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+
+volumes:
+  nflpgdata:
+    external:
+      name: nflpgdata
